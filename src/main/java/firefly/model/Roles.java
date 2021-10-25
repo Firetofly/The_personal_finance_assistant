@@ -2,7 +2,7 @@
  * Copyright (c)
  */
 
-package model;
+package firefly.model;
 
 import javax.persistence.*;
 
@@ -14,7 +14,7 @@ public class Roles {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    private String display_name;
+    private String displayName;
     private String description;
 
 
@@ -27,11 +27,11 @@ public class Roles {
     }
 
     public String getDisplayName(){
-        return this.display_name;
+        return this.displayName;
     }
 
     public void setDisplayName(String name){
-        this.display_name=name;
+        this.displayName=name;
     }
 
     public String getDescription(){
@@ -40,6 +40,11 @@ public class Roles {
 
     public void setDescription(String description){
         this.description=description;
+    }
+
+    @Override
+    public String toString(){
+        return "Role{ "+ id+"\nrole name= "+displayName+"\ndescription= "+description+"}";
     }
 
 }

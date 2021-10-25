@@ -2,8 +2,9 @@
  * Copyright (c)
  */
 
-package model;
+package firefly.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -20,7 +21,9 @@ public class Account {
 
     private long id;
 
-    private long id_client;
+    @Column(name = "id_client")
+    private long idClient;
+
     private String currency;
     private  float sum;
 
@@ -33,11 +36,11 @@ public class Account {
     }
 
     public long getIdClient(){
-        return this.id_client;
+        return this.idClient;
     }
 
     public void setIdClient(long id){
-        this.id_client=id;
+        this.idClient=id;
     }
 
     public String getCurrency(){
@@ -54,5 +57,10 @@ public class Account {
 
     public void setSum(float sum){
         this.sum=sum;
+    }
+
+    @Override
+    public String toString(){
+        return "Account{"+id+"\nclient id= "+idClient+"\ncurrency= "+currency+"\nsum= "+sum+"}";
     }
 }

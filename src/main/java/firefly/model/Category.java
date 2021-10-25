@@ -2,7 +2,7 @@
  * Copyright (c)
  */
 
-package model;
+package firefly.model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -34,5 +34,10 @@ public class Category {
     }
     public void setName(String name){
         this.name=name;
+    }
+
+    @Override
+    public String toString(){
+        return "Category{ "+id+"\nname= "+name+"}";
     }
 }
