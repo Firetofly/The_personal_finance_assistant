@@ -25,7 +25,7 @@ public class Account {
     private long idClient;
 
     private String currency;
-    private  float sum;
+    private double sum;
 
     public long getId(){
         return this.id;
@@ -51,7 +51,7 @@ public class Account {
         this.currency=currency;
     }
 
-    public float getSum(){
+    public double getSum(){
         return this.sum;
     }
 

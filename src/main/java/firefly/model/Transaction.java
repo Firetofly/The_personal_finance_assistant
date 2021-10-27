@@ -30,7 +30,7 @@ public class Transaction {
     private LocalDateTime incomeDate;
 
     private String currency;
-    private float value;
+    private double value;
 
     public Transaction(long idAccount,long idCategory,LocalDateTime incomeDate, String currency, float value) {
         this.idAccount=idAccount;
@@ -80,11 +80,11 @@ public class Transaction {
         this.currency = currency;
     }
 
-    public float getValue() {
+    public double getValue() {
         return value;
     }
 
-    public void setValue(float value) {
+    public void setValue(double value) {
         this.value = value;
     }
 

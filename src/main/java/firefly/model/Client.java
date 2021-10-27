@@ -29,6 +29,14 @@ public class Client {
     private String password;
     private LocalDateTime lastLoginDate;
 
+    public Client(String firstName, String middleName, String lastName, String login, String password) {
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.login = login;
+        this.password = password;
+    }
+
     @Override
     public String toString(){
         return "Client{ " + "\nid= " + id + "\nfirst_name= " + firstName +

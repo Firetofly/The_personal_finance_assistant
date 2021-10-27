@@ -30,8 +30,8 @@ public class Roles {
         return this.displayName;
     }
 
-    public void setDisplayName(String name){
-        this.displayName=name;
+    public void setDisplayName(String displayName){
+        this.displayName=displayName;
     }
 
     public String getDescription(){

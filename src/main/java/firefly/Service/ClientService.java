@@ -25,8 +25,8 @@ public class ClientService {
         return clientRepository.findById(id);
     }
 
-    public List<Client> findByFullName(String firstName, String middleName, String lastName) {
-        return clientRepository.findByFullName(firstName, middleName, lastName);
+    public List<Client> findByFirstnameAndLastnameAndMiddlename(String firstName, String middleName, String lastName) {
+        return clientRepository.findByFirstNameAndLastNameAndMiddleName(firstName, middleName, lastName);
     }
 
     public List<Client> findByLogin(String login) {

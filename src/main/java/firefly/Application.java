@@ -22,8 +22,7 @@ public class Application {
         SpringApplication.run(Application.class,args);
 
         System.out.println(application.test());
-        /*System.out.println(test());
-        System.out.println(clientRepository.findById(2));*/
+
     }
     public Client test(){
         return clientRepository.findById(1);

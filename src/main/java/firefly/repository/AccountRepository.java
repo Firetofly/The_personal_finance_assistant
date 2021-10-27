@@ -14,16 +14,17 @@ public interface AccountRepository extends JpaRepository<Account,Long> {
 
     Account findById(long id);
 
-    List<Account> findByIdClient(long id_client);
+    List<Account> findByIdClient(long idClient);
 
-    String findClientAccounts ="select cl.first_name||' '||cl.middle_name||' '||cl.last_name as \"Full name\"" +
-        ",acc.id as \"Account id\", cl.login, acc.currency,acc.sum as \"Deposit of account\"" +
-        "from app_admin.\"Account\" acc join app_admin.\"Client\" cl" +
+    String queryClientAccounts ="select cl.first_name||' '||cl.middle_name||' '||cl.last_name as Full name" +
+        ",acc.id as Account id, cl.login, acc.currency,acc.sum as Deposit of account" +
+        "from app_admin.Account acc join app_admin.Client cl" +
         "on acc.id_client=cl.id" +
         "order by cl.id";
-    @Query(value = findClientAccounts, nativeQuery = true)
+    @Query(value = queryClientAccounts, nativeQuery = true)
 
     List<Account> findAll();
 
     Account save(Account account);
+
 }

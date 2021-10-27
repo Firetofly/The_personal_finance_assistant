@@ -20,7 +20,7 @@ public class RolesService {
     }
 
     Roles findByName(String name){
-        return rolesRepository.findByName(name);
+        return rolesRepository.findByDisplayName(name);
     }
 
     public void createRole(Roles role){

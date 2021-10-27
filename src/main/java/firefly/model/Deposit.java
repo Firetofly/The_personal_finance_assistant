@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "Deposit")
@@ -20,12 +21,49 @@ public class Deposit {
     private long id;
 
     @Column(name = "id_account")
-    private long idAccount;
+    private long accountId;
     private String name;
-    private float value;
-    private float percent;
-    private String description;
+    private double value;
+    private double percent;
     private String currency;
+    private int months;
+
+    @Column(name = "monthly_payment")
+    private double monthlyPayment;
+    @Column(name = "last_date")
+    private LocalDateTime lastDate;
+
+    public long getAccountId() {
+        return accountId;
+    }
+
+    public void setAccountId(long accountId) {
+        this.accountId = accountId;
+    }
+
+    public int getMonths() {
+        return months;
+    }
+
+    public void setMonths(int months) {
+        this.months = months;
+    }
+
+    public double getMonthlyPayment() {
+        return monthlyPayment;
+    }
+
+    public void setMonthlyPayment(double monthlyPayment) {
+        this.monthlyPayment = monthlyPayment;
+    }
+
+    public LocalDateTime getLastDate() {
+        return lastDate;
+    }
+
+    public void setLastDate(LocalDateTime lastDate) {
+        this.lastDate = lastDate;
+    }
 
     public long getId() {
         return id;
@@ -33,14 +71,6 @@ public class Deposit {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public long getIdAccount() {
-        return idAccount;
-    }
-
-    public void setIdAccount(long idAccount) {
-        this.idAccount = idAccount;
     }
 
     public String getName() {
@@ -51,28 +81,20 @@ public class Deposit {
         this.name = name;
     }
 
-    public float getValue() {
+    public double getValue() {
         return value;
     }
 
-    public void setValue(float value) {
+    public void setValue(double value) {
         this.value = value;
     }
 
-    public float getPercent() {
+    public double getPercent() {
         return percent;
     }
 
-    public void setPercent(float percent) {
+    public void setPercent(double percent) {
         this.percent = percent;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public String getCurrency() {
@@ -84,8 +106,8 @@ public class Deposit {
     }
 
     @Override
-    public String toString(){
-        return "Deposit{ "+"id= "+id+"id_account= "+idAccount+"name= "+name+"value= "+value+"percent= "+percent
-            +"description= "+description+"currency= "+currency+"}";
+    public String toString() {
+        return "Deposit{ " + "id= " + id + "id_account= " + accountId + "name= " + name + "value= " + value + "percent= " + percent
+            + "currency= " + currency + "}";
     }
 }
