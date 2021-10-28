@@ -34,7 +34,7 @@ public class Credit {
     @Column(name = "last_date")
     private LocalDateTime lastDate;
 
-    public Credit(long accountId, String name, /*String description,*/ double percent, double value, String currency, int months) {
+/*    public Credit(long accountId, String name, *//*String description,*//* double percent, double value, String currency, int months) {
         this.accountId = accountId;
         this.name = name;
         //this.description = description;
@@ -42,7 +42,7 @@ public class Credit {
         this.value = value;
         this.currency = currency;
         this.months = months;
-    }
+    }*/
 
     public double getMonthlyPayment() {
         return monthlyPayment;
@@ -83,14 +83,6 @@ public class Credit {
     public void setId(long id) {
         this.id = id;
     }
-
-   /* public String getDescription() {
-        return this.description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }*/
 
     public String getName() {
         return this.name;

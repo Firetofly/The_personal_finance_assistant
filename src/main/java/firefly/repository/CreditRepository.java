@@ -19,7 +19,7 @@ public interface CreditRepository extends JpaRepository<Credit, Long> {
 
     List<Credit> findByAccountId(long accountId);
 
-    List<Credit> getByName(String name);
+    List<Credit> findByName(String name);
 
     String querySetMonthlyPayment = "Update appAdmin.Credit c" +
         "set c.monthly_payment= :monthly_payment" +
@@ -31,6 +31,6 @@ public interface CreditRepository extends JpaRepository<Credit, Long> {
     void setMonthlyPayment(@Param("id") long id,
                            @Param("monthly_payment") double monthlyPayment);
 
-    //Credit save(Credit credit);
+    Credit save(Credit credit);
 
 }

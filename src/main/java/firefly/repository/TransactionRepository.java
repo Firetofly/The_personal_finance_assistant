@@ -19,4 +19,6 @@ public interface TransactionRepository extends JpaRepository<Transaction,Long> {
     List<Transaction> findByIdCategory(long idCategory);
 
     List<Transaction> findByIncomeDate(LocalDateTime incomeDate);
+
+    Transaction save(Transaction transaction);
 }

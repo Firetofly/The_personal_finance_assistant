@@ -27,11 +27,7 @@ public class Deposit {
     private double percent;
     private String currency;
     private int months;
-
-    @Column(name = "monthly_payment")
-    private double monthlyPayment;
-    @Column(name = "last_date")
-    private LocalDateTime lastDate;
+    private LocalDateTime date;
 
     public long getAccountId() {
         return accountId;
@@ -47,22 +43,6 @@ public class Deposit {
 
     public void setMonths(int months) {
         this.months = months;
-    }
-
-    public double getMonthlyPayment() {
-        return monthlyPayment;
-    }
-
-    public void setMonthlyPayment(double monthlyPayment) {
-        this.monthlyPayment = monthlyPayment;
-    }
-
-    public LocalDateTime getLastDate() {
-        return lastDate;
-    }
-
-    public void setLastDate(LocalDateTime lastDate) {
-        this.lastDate = lastDate;
     }
 
     public long getId() {

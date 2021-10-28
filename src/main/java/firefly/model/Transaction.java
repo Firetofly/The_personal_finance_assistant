@@ -32,12 +32,13 @@ public class Transaction {
     private String currency;
     private double value;
 
-    public Transaction(long idAccount,long idCategory,LocalDateTime incomeDate, String currency, float value) {
-        this.idAccount=idAccount;
-        this.incomeDate=incomeDate;
-        this.currency=currency;
-        this.value=value;
-        this.idCategory=idCategory;
+    public Transaction(long idCategory, long idAccount, String currency, double value) {
+        this.idCategory = idCategory;
+        this.idAccount = idAccount;
+        this.incomeDate = LocalDateTime.now();
+        this.currency = currency;
+        this.value = value;
+        this.incomeDate=LocalDateTime.now();
     }
 
     public long getId() {

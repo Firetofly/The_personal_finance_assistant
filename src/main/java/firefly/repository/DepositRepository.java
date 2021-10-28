@@ -22,14 +22,15 @@ public interface DepositRepository extends JpaRepository<Deposit,Long> {
 
     Deposit save(Deposit deposit);
 
-    String querySetMonthlyPayment = "Update appAdmin.Credit c" +
-        "set c.monthly_payment= :monthly_payment" +
-        "where c.id= :id";
 
-    @Modifying(clearAutomatically = true)
-    @Transactional
-    @Query(value = querySetMonthlyPayment, nativeQuery = true)
-    void setMonthlyPayment(@Param("id") long id,
-                           @Param("monthly_payment") long monthlyPayment);
+    String queryFindClientDeposit ="Select (c.first_name||' '||c.middle_name||' 'c.last_name) as Full_name," +
+        "a.id_account, d.name,d.value,d.percent,d.currency,d.month from appAdmin.Client c " +
+        "join appAdmin.Account a on c.id=a.id_client" +
+        "join appAdmin.Deposit d on d.id_account=a.id" +
+        "where a.id= :idAccount";
+
+    @Query(value = queryFindClientDeposit, nativeQuery = true)
+    List<Deposit> findClientDeposit(@Param("idAccount") long idAccount);
+
 
 }

@@ -5,9 +5,12 @@
 package firefly.Service;
 
 import firefly.model.Credit;
+import firefly.model.Deposit;
 import firefly.repository.CreditRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class CreditService {
@@ -15,7 +18,7 @@ public class CreditService {
     @Autowired
     private CreditRepository creditRepository;
 
-    Credit credit = new Credit(1, "Credit for TV", 8.0, 15000, "RUB", 12);
+    Credit credit = new Credit();
 
     //Method for calculating a monthly payment to credit.
     public double calculateMonthlyPayment() {
@@ -29,6 +32,30 @@ public class CreditService {
         credit.setMonthlyPayment(calculateMonthlyPayment());
         creditRepository.setMonthlyPayment(credit.getId(), calculateMonthlyPayment());
     }
+
+    public Credit findById(long id){
+        return creditRepository.findById(id);
+    }
+
+    public List<Credit> findByAccountId(long accountId){
+        return creditRepository.findByAccountId(accountId);
+    }
+
+    public List<Credit> findByName(String name){
+        return creditRepository.findByName(name);
+    }
+
+    public void createCredit(Credit credit){
+         creditRepository.save(credit);
+    }
+
+
+
+
+
+
+
+
 
 
 }
