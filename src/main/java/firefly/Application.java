@@ -2,12 +2,12 @@
  * Copyright (c)
  */
 
-package firefly;import firefly.model.Client;
+package firefly;import firefly.Model.Client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
-import firefly.repository.ClientRepository;
+import firefly.Repository.ClientRepository;
 
 
 @ComponentScan(basePackages = "firefly")

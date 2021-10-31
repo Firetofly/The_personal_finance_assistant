@@ -4,8 +4,8 @@
 
 package firefly.Service;
 
-import firefly.model.Category;
-import firefly.repository.CategoryRepository;
+import firefly.Model.Category;
+import firefly.Repository.CategoryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,4 +25,6 @@ public class CategoryService {
     public void createCategory(Category category){
         categoryRepository.save(category);
     }
+
+
 }

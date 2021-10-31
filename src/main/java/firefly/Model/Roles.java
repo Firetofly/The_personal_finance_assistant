@@ -2,14 +2,15 @@
  * Copyright (c)
  */
 
-package firefly.model;
+package firefly.Model;
+
+import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name="Roles")
-
-public class Roles {
+public class Roles implements GrantedAuthority {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
@@ -47,4 +48,8 @@ public class Roles {
         return "Role{ "+ id+"\nrole name= "+displayName+"\ndescription= "+description+"}";
     }
 
+    @Override
+    public String getAuthority() {
+        return getDisplayName();
+    }
 }

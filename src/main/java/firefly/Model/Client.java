@@ -2,7 +2,7 @@
  * Copyright (c)
  */
 
-package firefly.model;
+package firefly.Model;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -26,6 +26,7 @@ public class Client {
     private String lastName;
 
     private String login;
+    @Transient
     private String password;
     private LocalDateTime lastLoginDate;
 

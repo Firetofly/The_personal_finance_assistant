@@ -4,8 +4,8 @@
 
 package firefly.Service;
 
-import firefly.model.Deposit;
-import firefly.repository.DepositRepository;
+import firefly.Model.Deposit;
+import firefly.Repository.DepositRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

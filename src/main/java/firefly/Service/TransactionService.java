@@ -4,8 +4,8 @@
 
 package firefly.Service;
 
-import firefly.model.Transaction;
-import firefly.repository.TransactionRepository;
+import firefly.Model.Transaction;
+import firefly.Repository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -38,4 +38,6 @@ public class TransactionService {
     public void createTransaction(Transaction transaction){
         transactionRepository.save(transaction);
     }
+
+
 }

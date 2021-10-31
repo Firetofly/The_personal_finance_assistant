@@ -2,11 +2,13 @@
  * Copyright (c)
  */
 
-package firefly.repository;
+package firefly.Repository;
 
-import firefly.model.Account;
+import firefly.Model.Account;
+import firefly.View.ClientAccountView;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -17,11 +19,12 @@ public interface AccountRepository extends JpaRepository<Account,Long> {
     List<Account> findByIdClient(long idClient);
 
     String queryClientAccounts ="select cl.first_name||' '||cl.middle_name||' '||cl.last_name as Full name" +
-        ",acc.id as Account id, cl.login, acc.currency,acc.sum as Deposit of account" +
-        "from app_admin.Account acc join app_admin.Client cl" +
-        "on acc.id_client=cl.id" +
+        ",acc.id as accountId, cl.login, acc.currency,acc.sum as depositOfAccount" +
+        "from app_admin.Account acc join app_admin.Client cl on acc.id_client=cl.id" +
+        "where cl.id= :id" +
         "order by cl.id";
     @Query(value = queryClientAccounts, nativeQuery = true)
+    List<ClientAccountView> findClientAccounts(@Param("id") long id);
 
     List<Account> findAll();
 

@@ -2,9 +2,9 @@
  * Copyright (c)
  */
 
-package firefly.repository;
+package firefly.Repository;
 
-import firefly.model.Roles;
+import firefly.Model.Roles;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface RolesRepository extends JpaRepository<Roles,Long> {

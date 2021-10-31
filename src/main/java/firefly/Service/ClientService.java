@@ -4,18 +4,33 @@
 
 package firefly.Service;
 
-import firefly.model.Client;
-import firefly.repository.ClientRepository;
+import firefly.Model.Client;
+import firefly.Repository.ClientRepository;
+import firefly.Repository.RolesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityManager;
 import java.util.List;
 
 @Service
-public class ClientService {
+public class ClientService implements UserDetailsService {
 
     @Autowired
     private ClientRepository clientRepository;
+
+    @Autowired
+    private RolesRepository rolesRepository;
+
+    @Autowired
+    BCryptPasswordEncoder bCryptPasswordEncoder;
+
+   /*@Autowired
+    private EntityManager entityManager;*/
 
 /*    public ClientService(ClientRepository clientRepository) {
         this.clientRepository = clientRepository;
@@ -36,6 +51,19 @@ public class ClientService {
     public void createClient(Client client) {
         clientRepository.save(client);
     }
+
+
+    @Override
+    public UserDetails loadUserByUsername(String login) throws UsernameNotFoundException {
+        Client client = clientRepository.findByLogin(login);
+        if(client != null){
+            return (UserDetails) client;
+        }
+        else{
+            throw new UsernameNotFoundException("Client's login doesn't exist!");
+        }
+    }
+
 
 
 }

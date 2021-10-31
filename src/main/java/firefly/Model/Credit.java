@@ -2,7 +2,7 @@
  * Copyright (c)
  */
 
-package firefly.model;
+package firefly.Model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,7 +24,6 @@ public class Credit {
     private long accountId;
 
     private String name;
-    //private String description;
     private double percent;
     private double value;
     private String currency;
@@ -66,14 +65,6 @@ public class Credit {
 
     public void setMonths(int months) {
         this.months = months;
-    }
-
-    public double getMonthly_payment() {
-        return monthlyPayment;
-    }
-
-    public void setMonthly_payment(float monthly_payment) {
-        this.monthlyPayment = monthly_payment;
     }
 
     public long getId() {

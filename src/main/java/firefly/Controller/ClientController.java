@@ -2,7 +2,7 @@
  * Copyright (c)
  */
 
-package firefly.controller;
+package firefly.Controller;
 
 
 import org.springframework.web.bind.annotation.RequestMapping;

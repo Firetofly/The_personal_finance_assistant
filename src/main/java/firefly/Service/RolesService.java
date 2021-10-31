@@ -4,8 +4,8 @@
 
 package firefly.Service;
 
-import firefly.model.Roles;
-import firefly.repository.RolesRepository;
+import firefly.Model.Roles;
+import firefly.Repository.RolesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -5,8 +5,8 @@
 package firefly.Service;
 
 
-import firefly.model.Account;
-import firefly.repository.AccountRepository;
+import firefly.Model.Account;
+import firefly.Repository.AccountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -2,7 +2,7 @@
  * Copyright (c)
  */
 
-package firefly.model;
+package firefly.Model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -2,9 +2,9 @@
  * Copyright (c)
  */
 
-package firefly.repository;
+package firefly.Repository;
 
-import firefly.model.Category;
+import firefly.Model.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CategoryRepository extends JpaRepository<Category, Long> {
