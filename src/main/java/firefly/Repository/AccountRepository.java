@@ -21,10 +21,10 @@ public interface AccountRepository extends JpaRepository<Account,Long> {
     String queryClientAccounts ="select cl.first_name||' '||cl.middle_name||' '||cl.last_name as Full name" +
         ",acc.id as accountId, cl.login, acc.currency,acc.sum as depositOfAccount" +
         "from app_admin.Account acc join app_admin.Client cl on acc.id_client=cl.id" +
-        "where cl.id= :id" +
+        "where cl.id= :cliendId" +
         "order by cl.id";
     @Query(value = queryClientAccounts, nativeQuery = true)
-    List<ClientAccountView> findClientAccounts(@Param("id") long id);
+    List<ClientAccountView> findClientAccounts(@Param("clientId") long id);
 
     List<Account> findAll();
 

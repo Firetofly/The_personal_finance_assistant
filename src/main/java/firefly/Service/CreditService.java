@@ -32,6 +32,7 @@ public class CreditService {
         credit.setMonthlyPayment(calculateMonthlyPayment(credit.getName()));
     }
 
+
     public Credit findById(long id) {
         return creditRepository.findById(id);
     }
