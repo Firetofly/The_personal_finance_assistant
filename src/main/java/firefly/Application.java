@@ -6,27 +6,19 @@ package firefly;import firefly.Model.Client;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import firefly.Repository.ClientRepository;
 
 
 @ComponentScan(basePackages = "firefly")
-@SpringBootApplication
+@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
 public class Application {
-    @Autowired
-    public ClientRepository clientRepository;
 
     public static void main(String[] args) {
-        Application application=  new Application();
-
         SpringApplication.run(Application.class,args);
-
-        System.out.println(application.test());
-
     }
-    public Client test(){
-        return clientRepository.findById(1);
-    }
+
 
 
 }

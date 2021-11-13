@@ -34,5 +34,9 @@ public class AccountService {
         return accountRepository.findAll();
     }
 
+    public Account findByIdClientAndCurrency(long idClient, String currency){
+        return accountRepository.findByIdClientAndCurrency(idClient, currency);
+    }
+
 
 }

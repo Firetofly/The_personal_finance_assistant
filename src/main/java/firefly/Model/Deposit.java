@@ -28,6 +28,15 @@ public class Deposit {
     private String currency;
     private int months;
     private LocalDateTime date;
+    private boolean active;
+
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
 
     public long getAccountId() {
         return accountId;

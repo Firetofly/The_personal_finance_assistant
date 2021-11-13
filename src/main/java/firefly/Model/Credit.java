@@ -32,16 +32,15 @@ public class Credit {
     private double monthlyPayment;
     @Column(name = "last_date")
     private LocalDateTime lastDate;
+    private boolean active;
 
-/*    public Credit(long accountId, String name, *//*String description,*//* double percent, double value, String currency, int months) {
-        this.accountId = accountId;
-        this.name = name;
-        //this.description = description;
-        this.percent = percent;
-        this.value = value;
-        this.currency = currency;
-        this.months = months;
-    }*/
+    public boolean isActive() {
+        return active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
+    }
 
     public double getMonthlyPayment() {
         return monthlyPayment;

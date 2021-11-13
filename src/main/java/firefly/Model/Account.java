@@ -55,7 +55,7 @@ public class Account {
         return this.sum;
     }
 
-    public void setSum(float sum){
+    public void setSum(double sum){
         this.sum=sum;
     }
 

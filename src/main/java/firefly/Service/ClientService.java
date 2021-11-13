@@ -26,8 +26,8 @@ public class ClientService implements UserDetailsService {
     @Autowired
     private RolesRepository rolesRepository;
 
-    @Autowired
-    BCryptPasswordEncoder bCryptPasswordEncoder;
+    /*@Autowired
+    BCryptPasswordEncoder bCryptPasswordEncoder;*/
 
    /*@Autowired
     private EntityManager entityManager;*/
@@ -44,8 +44,9 @@ public class ClientService implements UserDetailsService {
         return clientRepository.findByFirstNameAndLastNameAndMiddleName(firstName, middleName, lastName);
     }
 
-    public List<Client> findByLogin(String login) {
-        return findByLogin(login);
+    public Client findByLogin(String login) {
+        Client tmpClient =clientRepository.findByLogin(login);
+        return tmpClient;
     }
 
     public void createClient(Client client) {

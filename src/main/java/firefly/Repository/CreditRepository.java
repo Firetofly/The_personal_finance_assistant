@@ -22,15 +22,15 @@ public interface CreditRepository extends JpaRepository<Credit, Long> {
 
     List<Credit> findByAccountId(long accountId);
 
-    Credit findByName(String name);
+    Credit findByNameAndAccountId(String name, long accountId);
 
     String querySetMonthlyPayment = "Update appAdmin.Credit c" +
         "set c.monthly_payment= :monthly_payment" +
-        "where c.id= :id";
+        "where c.id= :idCredit";
     @Modifying(clearAutomatically = true)
     @Transactional
     @Query(value = querySetMonthlyPayment, nativeQuery = true)
-    void setMonthlyPayment(@Param("id") long id,
+    void SetMonthlyPayment(@Param("idCredit") long id,
                            @Param("monthly_payment") double monthlyPayment);
 
     @NotNull Credit save(Credit credit);
