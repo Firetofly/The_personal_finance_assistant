@@ -4,15 +4,20 @@
 
 package firefly.Model;
 
+import javax.management.relation.Role;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import java.util.Set;
 
 @Entity
-@Table(name = "Account")
+@Table(name = "account")
 
 public class Account {
 
@@ -26,6 +31,11 @@ public class Account {
 
     private String currency;
     private double sum;
+
+    @ManyToMany
+    @JoinTable(name = "account_transaction", joinColumns = @JoinColumn(name="id_account"),
+        inverseJoinColumns = @JoinColumn(name="id_transaction"))
+    private Set<Transaction> transactions;
 
     public long getId(){
         return this.id;
@@ -57,6 +67,14 @@ public class Account {
 
     public void setSum(double sum){
         this.sum=sum;
+    }
+
+    public Set<Transaction> getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(Set<Transaction> transactions) {
+        this.transactions = transactions;
     }
 
     @Override
