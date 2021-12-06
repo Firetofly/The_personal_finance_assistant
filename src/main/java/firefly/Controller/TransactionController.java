@@ -2,6 +2,7 @@
  * Copyright (c)
  */
 
+
 package firefly.Controller;
 
 import firefly.Model.Account;
@@ -24,16 +25,18 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/Transaction")
-@CrossOrigin(origins = "http://localhost:8090")
+@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
 public class TransactionController {
 
     @Autowired
     TransactionRepository transactionRepository;
 
+
     @Autowired
     TransactionService transactionService;
 
-    @GetMapping("/all-date-transaction")
+
+    @GetMapping("/all-transaction")
     public List<TransactionCategoryView> allClientTransactionsDate(@RequestParam long idClient) throws NullPointerException {
         if (transactionRepository.queryTransactions(idClient, LocalDateTime.now().minusYears(31), LocalDateTime.now()) != null) {
             return transactionRepository.queryTransactions(idClient,
@@ -44,14 +47,27 @@ public class TransactionController {
         }
     }
 
-    @GetMapping("/all-transactions")
-    public List<Transaction> allClientTransactions(@RequestBody Client client) throws NullPointerException {
-        if (transactionService.clientAccountTransactions(client) != null) {
-            return transactionService.clientAccountTransactions(client);
+    @GetMapping("/all-transactions-by-months")
+    public List<TransactionCategoryView> allClientTransactions(@RequestBody Client client, @RequestParam int months) throws NullPointerException {
+        if (transactionService.getClientTransactions(client,
+            LocalDateTime.now().minusMonths(months), LocalDateTime.now()) != null) {
+            return transactionService.getClientTransactions(client,
+                LocalDateTime.now().minusMonths(months),
+                LocalDateTime.now());
         } else {
-            throw new NullPointerException("Client has not any transactions!");
+            throw new NullPointerException("Client does not have any transactions at this month!");
         }
     }
+
+    @GetMapping("/all-transactions-by-date")
+    public List<TransactionCategoryView> allClientTransactions(@RequestBody Client client, @RequestParam LocalDateTime date) throws NullPointerException {
+        if (transactionService.getClientTransactions(client, date, LocalDateTime.now()) != null) {
+            return transactionService.getClientTransactions(client, date, LocalDateTime.now());
+        } else {
+            throw new NullPointerException("Client does not have any transactions at this month!");
+        }
+    }
+
 
     @PostMapping("/add-negative-transaction")
     public void addNegativeTransaction(@RequestParam Client client, @RequestParam double value,
@@ -110,3 +126,4 @@ public class TransactionController {
 
 
 }
+

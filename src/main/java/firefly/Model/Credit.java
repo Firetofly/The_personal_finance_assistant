@@ -13,14 +13,14 @@ import javax.persistence.Table;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "Credit")
+@Table(name = "credit")
 public class Credit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
-    @Column(name = "Account_id")
+    @Column(name = "account_id")
     private long accountId;
 
     private String name;
@@ -113,6 +113,8 @@ public class Credit {
     public void setCurrency(String currency) {
         this.currency = currency;
     }
+
+
 
     @Override
     public String toString() {

@@ -7,6 +7,7 @@ package firefly.Service;
 import firefly.Model.Client;
 import firefly.Model.Credit;
 import firefly.Repository.AccountRepository;
+import firefly.Repository.CategoryRepository;
 import firefly.Repository.CreditRepository;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,9 @@ public class CreditService {
 
     @Autowired
     private TransactionService transactionService;
+
+    @Autowired
+    private CategoryRepository categoryRepository;
 
     //Method for calculating a monthly payment to credit.
     public double calculateMonthlyPayment(String name, long accountId) {
@@ -73,12 +77,14 @@ public class CreditService {
     public void addCreditPay(Client client, String creditName, double payValue, String currency) {
         Credit tmpCredit = creditRepository.findByNameAndAccountId(creditName, accountRepository.
             findByIdClientAndCurrency(client.getId(), currency).getId());
-        transactionService.addNegativeTransaction(client, payValue, currency, "Financial expenses");
-        if (tmpCredit.isActive() != false && tmpCredit.getValue() == 0) {
+        transactionService.addNegativeTransaction(client, payValue, currency, (categoryRepository.
+            findById(8).getName()));
+
+        if (tmpCredit.isActive() && tmpCredit.getValue() == 0) {
             tmpCredit.setActive(false);
             tmpCredit.setLastDate(LocalDateTime.now());
         }
-        tmpCredit.setValue(tmpCredit.getValue()-payValue);
+        tmpCredit.setValue(tmpCredit.getValue() - payValue);
         setCalcMonthlyPayment(tmpCredit);
     }
 

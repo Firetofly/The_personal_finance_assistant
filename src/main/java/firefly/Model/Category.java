@@ -8,10 +8,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
+import java.util.Set;
 
 @Entity
-@Table(name = "Category")
+@Table(name = "category")
 public class Category {
 
     @Id
@@ -19,7 +21,10 @@ public class Category {
     private long id;
 
     private String name;
-
+/*
+    @ManyToMany(mappedBy = "category")
+    private Set<Transaction> transactions;
+*/
 
     public long getId(){
         return this.id;
@@ -35,7 +40,15 @@ public class Category {
     public void setName(String name){
         this.name=name;
     }
+/*
+    public Set<Transaction> getTransactions() {
+        return transactions;
+    }
 
+    public void setTransactions(Set<Transaction> transactions) {
+        this.transactions = transactions;
+    }
+*/
     @Override
     public String toString(){
         return "Category{ "+id+"\nname= "+name+"}";

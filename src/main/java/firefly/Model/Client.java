@@ -6,14 +6,14 @@ package firefly.Model;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Entity
 @Table(name = "client")
-
 public class Client {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(name = "first_name")
@@ -26,15 +26,24 @@ public class Client {
     private String lastName;
 
     private String login;
-    @Transient
+
     private String password;
+
+    @Transient
+    private String confirmPassword;
+
+    @ManyToMany
+    @JoinTable(name = "client_roles", joinColumns = @JoinColumn(name="id_client"),
+        inverseJoinColumns = @JoinColumn(name="id_role"))
+    private Set<Roles> roles;
+
     private LocalDateTime lastLoginDate;
 
     @Override
     public String toString(){
-        return "Client{ " + "\nid= " + id + "\nfirst_name= " + firstName +
-            "\nmiddle_name= " + middleName + "\nlast_name= " + lastName + "\nlogin= " +
-            "\npassword= " + password + "\nlast_login_date= " + lastLoginDate+"}";
+        return "Client{ " + "\nid= " + id + "\n, first_name= " + firstName +
+            "\n, middle_name= " + middleName + "\n, last_name= " + lastName + "\n, login= " +
+            "\n, password= " + password + "\n, last_login_date= " + lastLoginDate+"}";
     }
 
     public long getId() {
@@ -92,4 +101,23 @@ public class Client {
     public void setLastLoginDate(LocalDateTime lastLoginDate) {
         this.lastLoginDate = lastLoginDate;
     }
+
+    public Set<Roles> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Roles> roles) {
+        this.roles = roles;
+    }
+
+
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
+    }
+
+
 }

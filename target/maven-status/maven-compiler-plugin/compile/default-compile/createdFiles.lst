@@ -2,12 +2,15 @@ firefly\Model\Roles.class
 firefly\Model\Transaction.class
 firefly\Repository\DepositRepository.class
 firefly\Service\RolesService.class
+firefly\Controller\TransactionController.class
 firefly\Application.class
 firefly\Service\AccountService.class
 firefly\Repository\RolesRepository.class
 firefly\Service\DepositService.class
 firefly\Repository\ClientRepository.class
+firefly\Others\SecurityConfiguration.class
 firefly\Repository\AccountRepository.class
+firefly\Service\SecurityService.class
 firefly\Service\CategoryService.class
 firefly\Controller\UserController.class
 firefly\Controller\AdminController.class
@@ -20,9 +23,11 @@ firefly\Controller\CreditController.class
 firefly\Model\Client.class
 firefly\Repository\CreditRepository.class
 firefly\View\ClientDepositView.class
+firefly\Service\TransactionService.class
 firefly\Model\Deposit.class
 firefly\Model\Category.class
 firefly\Repository\TransactionRepository.class
 firefly\Service\CreditService.class
 firefly\Model\Account.class
 firefly\View\ClientAccountView.class
+firefly\Others\ClientValidator.class

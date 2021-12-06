@@ -7,9 +7,10 @@ package firefly.Model;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
-@Table(name="Roles")
+@Table(name = "roles")
 public class Roles implements GrantedAuthority {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,34 +19,48 @@ public class Roles implements GrantedAuthority {
     private String displayName;
     private String description;
 
+    @ManyToMany(mappedBy = "roles")
+    private Set<Client> clients;
 
-    public long getId(){
+
+    public long getId() {
         return this.id;
     }
 
-    public void setId(long id){
-        this.id=id;
+    public void setId(long id) {
+        this.id = id;
     }
 
-    public String getDisplayName(){
+    public String getDisplayName() {
         return this.displayName;
     }
 
-    public void setDisplayName(String displayName){
-        this.displayName=displayName;
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
     }
 
-    public String getDescription(){
+    public String getDescription() {
         return this.description;
     }
 
-    public void setDescription(String description){
-        this.description=description;
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public Set<Client> getClients() {
+        return clients;
+    }
+
+    public void setClients(Set<Client> clients) {
+        this.clients = clients;
     }
 
     @Override
-    public String toString(){
-        return "Role{ "+ id+"\nrole name= "+displayName+"\ndescription= "+description+"}";
+    public String toString() {
+        return "Role{" +
+            "id=" + id +
+            ", name= " + displayName +
+            ", description= " + description + "}";
     }
 
     @Override

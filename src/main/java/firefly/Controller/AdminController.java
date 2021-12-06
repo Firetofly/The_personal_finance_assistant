@@ -21,9 +21,10 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/Client")
+@RequestMapping("/admin")
 //@CrossOrigin(origins = "http://localhost:8090")
-public class ClientController {
+@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
+public class AdminController {
 
     @Autowired
     ClientService clientService;
@@ -44,13 +45,23 @@ public class ClientController {
     //Function for admin role
     @GetMapping("/find-client-by-login")
     public Client findByLogin(@RequestParam String login) {
-        return clientService.findByLogin(login);
+        return clientService.findClientByLogin(login);
     }
 
+    //Function for admin role
     @GetMapping("/find-by-id")
     public Client findById(@RequestParam long idClient){
         return clientService.findById(idClient);
     }
+
+    //Function for admin role
+    @GetMapping("/find-all-clients")
+    public List<Client> findAllClients(){
+        return clientService.findAllClients();
+    }
+
+
+
 
 
    /* @GetMapping("/client-accounts")

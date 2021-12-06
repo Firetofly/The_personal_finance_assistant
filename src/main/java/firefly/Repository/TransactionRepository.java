@@ -30,21 +30,22 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
 
     Transaction save(Transaction transaction);
 
-    String queryTransactions = "select ct.display_name as \"NameOfTransaction\" ," +
-        "count(ct.display_name) as \"NumberOfTransactions\",tr.income_date \n" +
-        "as \"IncomeDate\",sum(\"value\") as \"Sum\", tr.currency as \"Currency\" " +
-        "from  app_admin.\"Transaction\" tr \n" +
-        "join app_admin.\"Category\" ct on tr.id_category=ct.id\n" +
-        "join app_admin.\"Account\" ac on tr.id_account=ac.id\n" +
-        "where tr.income_date>= :incomeDateFrom and tr.income_date <= :incomeDateTo and ac.id_client= :idClient\n" +
-        "group by ct.display_name,tr.income_date,tr.currency,ac.id,ac.id_client\n" +
-        "order by tr.currency asc;";
+    String queryTransactions = "select ct.name as NameOfTransaction, \n" +
+        "              count(ct.name) as NumberOfTransactions,tr.income_date  \n" +
+        "              as IncomeDate, sum(\"value\") as \"Sum\", tr.currency as Currency\n" +
+        "\t\t\t  from  \"transaction\" tr \n" +
+        "              join category ct on tr.id_category=ct.id\n" +
+        "              join account ac on tr.id_account=ac.id\n" +
+        "              where tr.income_date>= :incomeDateFrom and tr.income_date <= :incomeDateTo " +
+        "               and ac.id_client= :idClient\n" +
+        "              group by ct.name,tr.income_date,tr.currency,ac.id,ac.id_client\n" +
+        "              order by tr.currency asc";
     @Query(value = queryTransactions, nativeQuery = true)
     List<TransactionCategoryView> queryTransactions(@Param("idClient") long idClient,
                                                     @Param("incomeDateFrom") LocalDateTime incomeDateFrom,
                                                     @Param("incomeDateTo") LocalDateTime incomeDateTo);
 
-    String querySetAccountValue = "update app_admin.Account acc" +
+    String querySetAccountValue = "update account acc" +
         "set acc.value = accValue" +
         "where acc.id_client =: idClient and acc.currency =: accCurrency and accValue =: accValue";
     @Modifying(clearAutomatically = true)
@@ -54,18 +55,19 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
                                 @Param("currency") String currency,
                                 @Param("accValue") double accValue);
 
-    /*String queryGetTransactions="select ct.display_name as \"NameOfTransaction\" ,\n" +
-        "        count(ct.display_name) as \"NumberOfTransactions\",\n" +
-        "\t\ttr.income_date as \"IncomeDate\",\n" +
-        "\t\tsum(\"value\") as \"Sum\",\n" +
-        "\t\ttr.currency as \"Currency\"\n" +
-        "        from  app_admin.\"Transaction\" tr \n" +
-        "        join app_admin.\"Category\" ct on tr.id_category=ct.id\n" +
-        "        join app_admin.\"Account\" ac on tr.id_account=ac.id\n" +
-        "        where tr.income_date>= :incomeDateFrom and tr.income_date <= :incomeDateTo and ac.id_client= :idClient" +
-        "        and ct.display_name = : nameCategory\n" +
-        "        group by ct.display_name,tr.income_date,tr.currency,ac.id,ac.id_client\n" +
-        "        order by tr.currency asc;";
+    String queryGetTransactions="select tr.name as NameOfTransaction , \n" +
+        "count(ct.name) as NumberOfTransactions, \n" +
+        "tr.income_date as IncomeDate, +\n" +
+        "sum(value) as \"sum\",\n" +
+        "tr.currency as currency\n" +
+        "               from \"transaction\" tr\n" +
+        "               join category ct on tr.id_category=ct.id\n" +
+        "               join account ac on tr.id_account=ac.id\n" +
+        "               where tr.income_date>= :incomeDateFrom and tr.income_date <= :incomeDateTo " +
+        "               and ac.id_client= :idClient \n" +
+        "               and ct.name = :nameCategory\n" +
+        "               group by ct.name,tr.income_date,tr.currency,ac.id,ac.id_client\n" +
+        "               order by tr.currency asc";
     @Modifying(clearAutomatically = true)
     @Transactional
     @Query(value = queryGetTransactions, nativeQuery = true)
@@ -73,5 +75,5 @@ public interface TransactionRepository extends JpaRepository<Transaction, Long> 
                                                     @Param("incomeDateFrom") LocalDateTime incomeDateFrom,
                                                     @Param("incomeDateTo") LocalDateTime incomeDateTo,
                                                     @Param("nameCategory") String nameCategory);
-*/
+
 }

@@ -2,6 +2,7 @@
  * Copyright (c)
  */
 
+
 package firefly.Service;
 
 import firefly.Model.Account;
@@ -10,6 +11,8 @@ import firefly.Model.Transaction;
 import firefly.Repository.AccountRepository;
 import firefly.Repository.CategoryRepository;
 import firefly.Repository.TransactionRepository;
+import firefly.View.TransactionCategoryView;
+import org.apache.tomcat.jni.Local;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -52,25 +55,27 @@ public class TransactionService {
         transactionRepository.save(transaction);
     }
 
-    public List<Transaction> clientAccountTransactions(Client client) {
+/*    public List<Transaction> clientAccountTransactions(Client client) {
         List<Account> account = accountRepository.findByIdClient(client.getId());
         List<Transaction> transactions = new ArrayList<>();
-
         for (Account value : account) {
             List<Transaction> tmp = transactionRepository.findByIdAccount(value.getId());
             transactions.addAll(tmp);
         }
         return transactions;
-    }
+    }*/
 
     public void addNegativeTransaction(Client client, double value, String currency, String categoryName) {
 
         Account tmpAcc = accountRepository.findByIdClientAndCurrency(client.getId(), currency);
         tmpAcc.setSum(tmpAcc.getSum() - value);
 
-        Transaction newTransaction = new Transaction(categoryRepository.findByName(categoryName).getId(), tmpAcc.getId(),
-            currency, value);
-
+        Transaction newTransaction = new Transaction();
+        newTransaction.setIdCategory(categoryRepository.findByName(categoryName).getId());
+        newTransaction.setIdAccount(tmpAcc.getId());
+        newTransaction.setCurrency(currency);
+        newTransaction.setValue(value);
+        newTransaction.setIncomeDate(LocalDateTime.now());
         createTransaction(newTransaction);
         transactionRepository.SetAccountValue(client.getId(), currency, tmpAcc.getSum() - value);
     }
@@ -80,11 +85,19 @@ public class TransactionService {
         Account tmpAcc = accountRepository.findByIdClientAndCurrency(client.getId(), currency);
         tmpAcc.setSum(tmpAcc.getSum() + value);
 
-        Transaction newTransaction = new Transaction(categoryRepository.findByName(categoryName).getId(), tmpAcc.getId(),
-            currency, value);
-
+        Transaction newTransaction = new Transaction();
+        newTransaction.setIdCategory(categoryRepository.findByName(categoryName).getId());
+        newTransaction.setIdAccount(tmpAcc.getId());
+        newTransaction.setCurrency(currency);
+        newTransaction.setValue(value);
+        newTransaction.setIncomeDate(LocalDateTime.now());
         createTransaction(newTransaction);
         transactionRepository.SetAccountValue(client.getId(), currency, tmpAcc.getSum() + value);
     }
 
+    public List<TransactionCategoryView> getClientTransactions(Client client, LocalDateTime from, LocalDateTime to){
+        return transactionRepository.queryTransactions(client.getId(), from, to);
+    }
+
 }
+

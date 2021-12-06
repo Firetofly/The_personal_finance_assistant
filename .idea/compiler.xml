@@ -6,18 +6,23 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="The personal finance assistant" />
+        <module name="Personal-FA" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="entery-point" target="16" />
       <module name="entry-point" target="16" />
       <module name="Test-module" target="16" />
+      <module name="The personal finance assistant" target="8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Personal-FA" options="-parameters" />
       <module name="The personal finance assistant" options="-parameters" />
     </option>
+  </component>
+  <component name="TypeScriptCompiler">
+    <option name="recompileOnChanges" value="true" />
   </component>
 </project>

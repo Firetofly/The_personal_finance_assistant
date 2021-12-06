@@ -35,14 +35,24 @@ public interface CreditRepository extends JpaRepository<Credit, Long> {
 
     @NotNull Credit save(Credit credit);
 
-    String queryFindClientCredit="Select (cl.first_name||' '||cl.middle_name||' 'cl.last_name) as FullName," +
-        "a.id_account as idAccount, cr.name as CreditName,cr.value,cr.percent,cr.currency,cr.month," +
-        "cr.monthlyPayment from app_admin.Client cl " +
-        "join app_admin.Account a on c.id=a.id_client" +
-        "join app_admin.Credit cr on cr.id_account=a.id" +
-        "where cl.id= :id";
-    @Query(value = queryFindClientCredit, nativeQuery = true)
-    List<ClientCreditView> findClientCredit(@Param("id") long id);
+    String queryFindAllClientCredits="Select (cl.first_name||' '||cl.middle_name||' '||cl.last_name) as UserFullName,\n" +
+        "        a.id as Account_id, cr.name as CreditName,cr.value,cr.percent,cr.currency,\n" +
+        "        cr.monthly_payment, cr.last_date as LastDate, cr.active from client cl \n" +
+        "        join account a on cl.id=a.id_client\n" +
+        "        join credit cr on cr.account_id=a.id\n" +
+        "        where cl.id= :id";
+    @Query(value = queryFindAllClientCredits, nativeQuery = true)
+    List<ClientCreditView> findAllClientCredits(@Param("id") long id);
+
+    String queryFindWithActiveClientCredits="Select (cl.first_name||' '||cl.middle_name||' '||cl.last_name) as UserFullName, \n" +
+        "        a.id as Account_id, cr.name as CreditName,cr.value,cr.percent,cr.currency, \n" +
+        "        cr.monthly_payment, cr.last_date as LastDate, cr.active from client cl \n" +
+        "        join account a on cl.id=a.id_client \n" +
+        "        join credit cr on cr.account_id=a.id \n" +
+        "        where cl.id= :id and cr.active= :active";
+    @Query(value = queryFindWithActiveClientCredits, nativeQuery = true)
+    List<ClientCreditView> findWithActiveClientCredits(@Param("id") long id, @Param("active") boolean active);
+
 
 
 }

@@ -18,7 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/Credit")
-@CrossOrigin(origins = "http://localhost:8090")
+//@CrossOrigin(origins = "http://localhost:8090")
+@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
 public class CreditController {
 
     @Autowired
@@ -30,9 +31,11 @@ public class CreditController {
        creditService.addCredit(client, name, value, percent, currency, months);
     }
 
-    @PostMapping("/add-credit-pay")
+/*    @PostMapping("/add-credit-pay")
     public void addCreditPay(@RequestParam Client client,@RequestParam String creditName,
                              @RequestParam double payValue,@RequestParam String currency){
         creditService.addCreditPay(client, creditName, payValue, currency);
     }
+
+ */
 }
