@@ -29,9 +29,6 @@ public class AdminController {
     @Autowired
     ClientService clientService;
 
-    //@Autowired
-
-
     //Function for admin role
     @GetMapping("/find-client-by-fullname")
     public List<Client> findByFirstNameAndLastNameAndMiddleName(@RequestParam String firstName,
@@ -59,9 +56,6 @@ public class AdminController {
     public List<Client> findAllClients(){
         return clientService.findAllClients();
     }
-
-
-
 
 
    /* @GetMapping("/client-accounts")

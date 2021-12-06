@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -23,6 +24,9 @@ public class SecurityService {
     @Autowired
     private UserDetailsService userDetailsService;
 
+    @Autowired
+    private ClientService clientService;
+
     private static final Logger logger = LoggerFactory.getLogger(SecurityService.class);
 
     //Method for greeting Client by login
@@ -34,10 +38,10 @@ public class SecurityService {
         return null;
     }
 
-    public void autoLogin(String login, String pasword) {
+    public void autoLogin(String login, String password) {
         UserDetails userDetails = userDetailsService.loadUserByUsername(login);
         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(userDetails,
-            pasword, userDetails.getAuthorities());
+            password, userDetails.getAuthorities());
         authenticationManager.authenticate(authenticationToken);
 
         if(authenticationToken.isAuthenticated()){
@@ -46,4 +50,6 @@ public class SecurityService {
             logger.debug(String.format("Successfully auto logged in", login));
         }
     }
+
+
 }

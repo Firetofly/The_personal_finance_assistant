@@ -28,15 +28,12 @@ public class UserController {
 
     @Autowired
     private ClientService clientService;
-
     @Autowired
     private SecurityService securityService;
 
     @Autowired
     private ClientValidator clientValidator;
 
-    @Autowired
-    private AuthenticationManager authenticationManager;
 
    /* @PostMapping("/registration")
     public void registrationUser(@RequestBody Client client) throws AlreadyExistsException{
