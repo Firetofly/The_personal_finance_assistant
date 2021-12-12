@@ -1,0 +1,101 @@
+2021-12-13 00:21 INFO  Application:25 - Application has been started at 2021-12-13T00:21:40.668
+2021-12-13 00:22 ERROR RegistrationService:32 - Incorrect login. Such login already exists
+2021-12-13 00:22 ERROR RegistrationService:32 - Incorrect login. Such login already exists
+2021-12-13 00:23 INFO  Application:26 - Application has been started at 2021-12-13 00:23
+2021-12-13 00:24 ERROR RegistrationService:32 - Incorrect login. Such login already exists
+2021-12-13 00:24 ERROR RegistrationService:32 - Incorrect login. Such login already exists
+2021-12-13 00:24 INFO  Application:25 - Application has been started
+2021-12-13 00:25 INFO  RegistrationService:32 - Client{ 
+id= 0
+, first_name= Angelina
+, middle_name= Vladimirovna
+, last_name= Fomina
+, login= 
+, password= 123test1
+, last_login_date= null}
+2021-12-13 00:25 ERROR RegistrationService:33 - Incorrect login. Such login already exists
+2021-12-13 00:25 INFO  RegistrationService:32 - Client{ 
+id= 0
+, first_name= Angelina
+, middle_name= Vladimirovna
+, last_name= Fomina
+, login= 
+, password= 123test1
+, last_login_date= null}
+2021-12-13 00:25 ERROR RegistrationService:33 - Incorrect login. Such login already exists
+2021-12-13 00:30 INFO  Application:25 - Application has been started
+2021-12-13 00:30 INFO  Application:25 - Application has been started
+2021-12-13 00:30 INFO  UserController:31 - User tried to register with following parameters: Client{ 
+id= 0
+, first_name= Angelina
+, middle_name= Vladimirovna
+, last_name= Fomina
+, login= 
+, password= 123test1
+, last_login_date= null}
+2021-12-13 00:30 ERROR UserController:32 - Incorrect login. Such login already exists
+2021-12-13 00:30 INFO  UserController:35 - User as login: Fominahas been successfully registered
+2021-12-13 00:34 INFO  UserController:35 - User as login: Koguthas been successfully registered
+2021-12-13 00:37 INFO  Application:25 - Application has been started
+2021-12-13 01:45 INFO  Application:25 - Application has been started
+2021-12-13 01:45 INFO  UserController:43 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= 123test
+, last_login_date= null} has been authorized successfully.
+2021-12-13 01:46 INFO  UserController:43 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= 123test
+, last_login_date= null} has been authorized successfully.
+2021-12-13 01:47 INFO  UserController:34 - User as login: fomia-av has been successfully registered
+2021-12-13 01:47 ERROR UserController:41 - Client with such login already exists!
+2021-12-13 01:47 INFO  UserController:43 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= 123test1
+, last_login_date= null} has been authorized successfully.
+2021-12-13 01:48 ERROR UserController:41 - Client with such login already exists!
+2021-12-13 01:48 INFO  UserController:43 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= 123test1
+, last_login_date= null} has been authorized successfully.
+2021-12-13 01:48 ERROR UserController:41 - Client with such login already exists!
+2021-12-13 01:48 INFO  UserController:43 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= null
+, last_login_date= null} has been authorized successfully.
+2021-12-13 01:48 INFO  UserController:43 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= 123test
+, last_login_date= null} has been authorized successfully.
+2021-12-13 01:49 ERROR UserController:41 - Client with such login already exists!
+2021-12-13 01:49 INFO  UserController:43 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= 123test1
+, last_login_date= null} has been authorized successfully.

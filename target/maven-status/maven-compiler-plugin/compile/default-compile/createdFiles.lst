@@ -8,9 +8,10 @@ firefly\Service\AccountService.class
 firefly\Repository\RolesRepository.class
 firefly\Service\DepositService.class
 firefly\Repository\ClientRepository.class
-firefly\Others\SecurityConfiguration.class
+firefly\Configs\SpringSecurityConfig.class
 firefly\Repository\AccountRepository.class
-firefly\Service\SecurityService.class
+firefly\Exceptions\GlobalExceptionHandler.class
+firefly\Exceptions\ResourceNotFoundException.class
 firefly\Service\CategoryService.class
 firefly\Controller\UserController.class
 firefly\Controller\AdminController.class
@@ -18,11 +19,14 @@ firefly\Model\Credit.class
 firefly\Repository\CategoryRepository.class
 firefly\Service\ClientService.class
 firefly\View\ClientCreditView.class
+firefly\Exceptions\ErrorDetails.class
 firefly\View\TransactionCategoryView.class
 firefly\Controller\CreditController.class
 firefly\Model\Client.class
 firefly\Repository\CreditRepository.class
 firefly\View\ClientDepositView.class
+firefly\Controller\BasicAuthController.class
+firefly\Configs\AuthenticationBean.class
 firefly\Service\TransactionService.class
 firefly\Model\Deposit.class
 firefly\Model\Category.class
@@ -30,4 +34,3 @@ firefly\Repository\TransactionRepository.class
 firefly\Service\CreditService.class
 firefly\Model\Account.class
 firefly\View\ClientAccountView.class
-firefly\Others\ClientValidator.class

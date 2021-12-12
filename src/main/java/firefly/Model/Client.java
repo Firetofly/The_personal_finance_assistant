@@ -32,10 +32,10 @@ public class Client {
     @Transient
     private String confirmPassword;
 
-    @ManyToMany
+/*   @ManyToMany
     @JoinTable(name = "client_roles", joinColumns = @JoinColumn(name="id_client"),
         inverseJoinColumns = @JoinColumn(name="id_role"))
-    private Set<Roles> roles;
+    private Set<Roles> roles;*/
 
     private LocalDateTime lastLoginDate;
 
@@ -102,13 +102,13 @@ public class Client {
         this.lastLoginDate = lastLoginDate;
     }
 
-    public Set<Roles> getRoles() {
+/*    public Set<Roles> getRoles() {
         return roles;
     }
 
     public void setRoles(Set<Roles> roles) {
         this.roles = roles;
-    }
+    }*/
 
 
     public String getConfirmPassword() {

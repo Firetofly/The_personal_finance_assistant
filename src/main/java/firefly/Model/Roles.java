@@ -19,8 +19,10 @@ public class Roles implements GrantedAuthority {
     private String displayName;
     private String description;
 
-    @ManyToMany(mappedBy = "roles")
-    private Set<Client> clients;
+
+/*    @ManyToMany(mappedBy = "roles")
+    private Set<Client> clients;*/
+
 
 
     public long getId() {
@@ -47,13 +49,15 @@ public class Roles implements GrantedAuthority {
         this.description = description;
     }
 
-    public Set<Client> getClients() {
+
+/*    public Set<Client> getClients() {
         return clients;
     }
 
     public void setClients(Set<Client> clients) {
         this.clients = clients;
-    }
+    }*/
+
 
     @Override
     public String toString() {
