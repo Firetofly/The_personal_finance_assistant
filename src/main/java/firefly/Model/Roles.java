@@ -4,71 +4,31 @@
 
 package firefly.Model;
 
-import org.springframework.security.core.GrantedAuthority;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
-import javax.persistence.*;
-import java.util.Set;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@NoArgsConstructor
 @Entity
 @Table(name = "roles")
-public class Roles implements GrantedAuthority {
+public class Roles {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String displayName;
     private String description;
 
-
-/*    @ManyToMany(mappedBy = "roles")
-    private Set<Client> clients;*/
-
-
-
-    public long getId() {
-        return this.id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getDisplayName() {
-        return this.displayName;
-    }
-
-    public void setDisplayName(String displayName) {
-        this.displayName = displayName;
-    }
-
-    public String getDescription() {
-        return this.description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-
-/*    public Set<Client> getClients() {
-        return clients;
-    }
-
-    public void setClients(Set<Client> clients) {
-        this.clients = clients;
-    }*/
-
-
-    @Override
-    public String toString() {
-        return "Role{" +
-            "id=" + id +
-            ", name= " + displayName +
-            ", description= " + description + "}";
-    }
-
-    @Override
-    public String getAuthority() {
-        return getDisplayName();
-    }
 }

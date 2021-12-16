@@ -4,53 +4,30 @@
 
 package firefly.Model;
 
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
-import java.util.Set;
 
+@Getter
+@Setter
+@EqualsAndHashCode
+@ToString
+@NoArgsConstructor
 @Entity
 @Table(name = "category")
 public class Category {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     private String name;
-/*
-    @ManyToMany(mappedBy = "category")
-    private Set<Transaction> transactions;
-*/
-
-    public long getId(){
-        return this.id;
-    }
-
-    public void setId(long id){
-        this.id=id;
-    }
-
-    public String getName(){
-        return this.name;
-    }
-    public void setName(String name){
-        this.name=name;
-    }
-/*
-    public Set<Transaction> getTransactions() {
-        return transactions;
-    }
-
-    public void setTransactions(Set<Transaction> transactions) {
-        this.transactions = transactions;
-    }
-*/
-    @Override
-    public String toString(){
-        return "Category{ "+id+"\nname= "+name+"}";
-    }
 }

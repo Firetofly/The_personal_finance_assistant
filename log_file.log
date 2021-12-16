@@ -99,3 +99,347 @@ id= 0
 , login= 
 , password= 123test1
 , last_login_date= null} has been authorized successfully.
+2021-12-13 22:59 INFO  Application:25 - Application has been started
+2021-12-13 23:53 ERROR UserController:41 - Client with such login already exists!
+2021-12-13 23:53 INFO  UserController:43 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= 123test1
+, last_login_date= null} has been authorized successfully.
+2021-12-13 23:53 ERROR UserController:41 - Client with such login already exists!
+2021-12-13 23:53 INFO  UserController:43 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= 123test1
+, last_login_date= null} has been authorized successfully.
+2021-12-13 23:53 ERROR UserController:41 - Client with such login already exists!
+2021-12-13 23:53 INFO  UserController:43 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= 123test1
+, last_login_date= null} has been authorized successfully.
+2021-12-13 23:53 ERROR UserController:41 - Client with such login already exists!
+2021-12-13 23:53 INFO  UserController:43 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= 123test1
+, last_login_date= null} has been authorized successfully.
+2021-12-13 23:53 INFO  UserController:43 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= 123test
+, last_login_date= null} has been authorized successfully.
+2021-12-13 23:54 ERROR UserController:41 - Client with such login already exists!
+2021-12-13 23:54 INFO  UserController:43 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= 123test
+, last_login_date= null} has been authorized successfully.
+2021-12-13 23:56 INFO  UserController:43 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= 123test
+, last_login_date= null} has been authorized successfully.
+2021-12-13 23:57 ERROR UserController:41 - Client with such login already exists!
+2021-12-13 23:57 INFO  UserController:43 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= 123test
+, last_login_date= null} has been authorized successfully.
+2021-12-13 23:57 ERROR UserController:41 - Client with such login already exists!
+2021-12-13 23:57 INFO  UserController:43 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= 123test
+, last_login_date= null} has been authorized successfully.
+2021-12-13 23:57 INFO  UserController:43 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= 123test
+, last_login_date= null} has been authorized successfully.
+2021-12-14 00:00 ERROR UserController:41 - Client with such login already exists!
+2021-12-14 00:00 INFO  UserController:43 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= null
+, last_login_date= null} has been authorized successfully.
+2021-12-14 00:01 ERROR UserController:41 - Client with such login already exists!
+2021-12-14 00:01 INFO  UserController:43 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= null
+, last_login_date= null} has been authorized successfully.
+2021-12-14 00:01 ERROR UserController:41 - Client with such login already exists!
+2021-12-14 00:01 INFO  UserController:43 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= null
+, last_login_date= null} has been authorized successfully.
+2021-12-14 00:01 ERROR UserController:41 - Client with such login already exists!
+2021-12-14 00:01 INFO  UserController:43 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= null
+, last_login_date= null} has been authorized successfully.
+2021-12-14 00:02 ERROR UserController:41 - Client with such login already exists!
+2021-12-14 00:02 INFO  UserController:43 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= null
+, last_login_date= null} has been authorized successfully.
+2021-12-14 00:02 ERROR UserController:41 - Client with such login already exists!
+2021-12-14 00:02 INFO  UserController:43 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= null
+, last_login_date= null} has been authorized successfully.
+2021-12-14 00:02 ERROR UserController:41 - Client with such login already exists!
+2021-12-14 00:02 INFO  UserController:43 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= null
+, last_login_date= null} has been authorized successfully.
+2021-12-14 00:02 ERROR UserController:41 - Client with such login already exists!
+2021-12-14 00:02 INFO  UserController:43 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= null
+, last_login_date= null} has been authorized successfully.
+2021-12-14 00:03 ERROR UserController:41 - Client with such login already exists!
+2021-12-14 00:03 INFO  UserController:43 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= null
+, last_login_date= null} has been authorized successfully.
+2021-12-14 00:03 ERROR UserController:41 - Client with such login already exists!
+2021-12-14 00:03 INFO  UserController:43 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= null
+, last_login_date= null} has been authorized successfully.
+2021-12-14 00:03 ERROR UserController:41 - Client with such login already exists!
+2021-12-14 00:03 INFO  UserController:43 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= null
+, last_login_date= null} has been authorized successfully.
+2021-12-14 00:03 ERROR UserController:41 - Client with such login already exists!
+2021-12-14 00:03 INFO  UserController:43 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= null
+, last_login_date= null} has been authorized successfully.
+2021-12-14 00:03 ERROR UserController:41 - Client with such login already exists!
+2021-12-14 00:03 INFO  UserController:43 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= null
+, last_login_date= null} has been authorized successfully.
+2021-12-14 00:04 ERROR UserController:41 - Client with such login already exists!
+2021-12-14 00:04 INFO  UserController:43 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= null
+, last_login_date= null} has been authorized successfully.
+2021-12-14 00:07 INFO  Application:25 - Application has been started
+2021-12-14 00:07 ERROR UserController:41 - Client with such login is not exist!
+2021-12-14 00:08 INFO  UserController:45 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= 123test
+, last_login_date= null} has been authorized successfully.
+2021-12-14 00:09 ERROR UserController:41 - Client with such login is not exist!
+2021-12-14 00:09 ERROR UserController:41 - Client with such login is not exist!
+2021-12-14 00:39 INFO  UserController:45 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= 123test
+, last_login_date= null} has been authorized successfully.
+2021-12-14 01:04 INFO  UserController:45 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= 123еуые
+, last_login_date= null} has been authorized successfully.
+2021-12-14 01:05 ERROR UserController:41 - Client with such login is not exist!
+2021-12-14 01:05 ERROR UserController:41 - Client with such login is not exist!
+2021-12-14 01:08 INFO  UserController:34 - User as login: kogut-bv has been successfully registered
+2021-12-14 01:08 INFO  UserController:30 - User tried to register with following parameters: Client{ 
+id= 0
+, first_name= Bogdan
+, middle_name= Vitalievich
+, last_name= Kogut
+, login= 
+, password= kogut123
+, last_login_date= null}
+2021-12-14 01:08 ERROR UserController:31 - Incorrect login. Such login already exists
+2021-12-14 01:08 INFO  UserController:34 - User as login: kogut-bv has been successfully registered
+2021-12-14 01:10 INFO  Application:25 - Application has been started
+2021-12-14 01:13 INFO  UserController:48 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= 123test
+, last_login_date= null} has been authorized successfully.
+2021-12-14 01:26 INFO  Application:25 - Application has been started
+2021-12-14 01:27 ERROR UserController:55 - Client with such login is not exist!
+2021-12-14 01:29 INFO  UserController:59 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= 123test
+, last_login_date= null} has been authorized successfully.
+2021-12-14 01:31 INFO  Application:25 - Application has been started
+2021-12-14 01:32 INFO  UserController:37 - User as login: null has been successfully registered
+2021-12-14 01:35 INFO  Application:25 - Application has been started
+2021-12-14 01:35 INFO  UserController:52 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= 123test
+, last_login_date= null} has been authorized successfully.
+2021-12-14 01:36 ERROR UserController:35 - Incorrect login. Login must be not null!
+2021-12-14 01:37 ERROR UserController:35 - Incorrect login. Login must be not null!
+2021-12-14 01:38 ERROR UserController:35 - Incorrect login. Login must be not null!
+2021-12-14 01:39 ERROR UserController:35 - Incorrect login. Login must be not null!
+2021-12-14 01:39 ERROR UserController:35 - Incorrect login. Login must be not null!
+2021-12-14 01:39 ERROR UserController:35 - Incorrect login. Login must be not null!
+2021-12-14 01:39 ERROR UserController:35 - Incorrect login. Login must be not null!
+2021-12-14 01:39 ERROR UserController:35 - Incorrect login. Login must be not null!
+2021-12-14 01:39 ERROR UserController:35 - Incorrect login. Login must be not null!
+2021-12-14 01:39 ERROR UserController:35 - Incorrect login. Login must be not null!
+2021-12-14 01:39 ERROR UserController:35 - Incorrect login. Login must be not null!
+2021-12-14 01:39 ERROR UserController:35 - Incorrect login. Login must be not null!
+2021-12-14 01:39 ERROR UserController:35 - Incorrect login. Login must be not null!
+2021-12-14 01:39 ERROR UserController:35 - Incorrect login. Login must be not null!
+2021-12-14 01:39 ERROR UserController:35 - Incorrect login. Login must be not null!
+2021-12-14 01:39 INFO  UserController:52 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= 123test
+, last_login_date= null} has been authorized successfully.
+2021-12-14 01:42 INFO  UserController:39 - User as login: kogut-bv has been successfully registered
+2021-12-14 01:44 INFO  UserController:39 - User as login: fomina-ev has been successfully registered
+2021-12-14 01:44 INFO  UserController:52 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= kogut123
+, last_login_date= null} has been authorized successfully.
+2021-12-14 01:46 INFO  UserController:39 - User as login: 123123test has been successfully registered
+2021-12-14 01:47 INFO  UserController:52 - Client{ 
+id= 0
+, first_name= null
+, middle_name= null
+, last_name= null
+, login= 
+, password= 123123test
+, last_login_date= null} has been authorized successfully.
+2021-12-16 23:40 INFO  Application:25 - Application has been started
+2021-12-16 23:44 INFO  UserController:51 - Client(id=0, firstName=null, middleName=null, lastName=null, login=fomin-sa, password=123test, lastLoginDate=null) has been authorized successfully.
+2021-12-16 23:48 INFO  Application:25 - Application has been started
+2021-12-16 23:48 INFO  UserController:51 - Client(id=0, firstName=null, middleName=null, lastName=null, login=fomin-sa, password=123test, lastLoginDate=null) has been authorized successfully.
+2021-12-16 23:49 INFO  Application:25 - Application has been started
+2021-12-16 23:49 ERROR UserController:47 - Client with such login is not exist!
+2021-12-16 23:49 INFO  UserController:52 - Client(id=0, firstName=null, middleName=null, lastName=null, login=fomin-sa, password=123test, lastLoginDate=null) has been authorized successfully.
+2021-12-16 23:51 INFO  Application:25 - Application has been started
+2021-12-16 23:52 INFO  UserController:52 - Client(id=0, firstName=null, middleName=null, lastName=null, login=kogut-bv, password=kogut123, lastLoginDate=null) has been authorized successfully.
+2021-12-16 23:55 INFO  Application:25 - Application has been started
+2021-12-16 23:55 ERROR UserController:47 - Client with such login is not exist!
+2021-12-16 23:55 INFO  UserController:52 - Client(id=0, firstName=null, middleName=null, lastName=null, login=fomia-av, password=123test1, lastLoginDate=null) has been authorized successfully.
+2021-12-16 23:56 ERROR UserController:47 - Client with such login is not exist!
+2021-12-17 00:02 INFO  Application:25 - Application has been started
+2021-12-17 00:03 INFO  UserController:42 - User as login: Test has been successfully registered
+2021-12-17 00:04 INFO  UserController:54 - Client(id=0, firstName=null, middleName=null, lastName=null, login=fomin-sa, password=test123, lastLoginDate=null) has been authorized successfully.
+2021-12-17 00:04 INFO  UserController:54 - Client(id=0, firstName=null, middleName=null, lastName=null, login=fomia-av, password=123test1, lastLoginDate=null) has been authorized successfully.
