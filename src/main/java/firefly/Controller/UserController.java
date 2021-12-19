@@ -15,6 +15,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
+import java.util.Locale;
 
 //import firefly.Service.SecurityService;
 
@@ -45,14 +48,17 @@ public class UserController {
 
     @PostMapping("/login")
     public Client loginUser(@RequestBody Client client){
+        DateTimeFormatter formatter = DateTimeFormatter
+            .ofPattern("yyyy.MM.dd HH:mm:ss", Locale.ROOT);
+
+        clientService.findByLogin(client.getLogin()).setLastLoginDate(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES));
         if (clientService.findByLogin(client.getLogin())==null){
             logger.error("Client with such login is not exist!");
-            client.setLastLoginDate(LocalDateTime.now());
             return null;
         }
         else{
-            logger.info(client+" has been authorized successfully.");
-            clientService.findByLogin(client.getLogin()).setLastLoginDate(LocalDateTime.now());
+            logger.info("Client "+client.getLogin()+" has been authorized successfully.");
+            clientService.saveClient(clientService.findByLogin(client.getLogin()));
             return clientService.findByLogin(client.getLogin());
         }
     }

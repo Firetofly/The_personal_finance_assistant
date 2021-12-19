@@ -6,6 +6,7 @@ C:\Users\fomin\Desktop\Projects\Personal_finance_assistant\src\main\java\firefly
 C:\Users\fomin\Desktop\Projects\Personal_finance_assistant\src\main\java\firefly\Controller\UserController.java
 C:\Users\fomin\Desktop\Projects\Personal_finance_assistant\src\main\java\firefly\Service\TransactionService.java
 C:\Users\fomin\Desktop\Projects\Personal_finance_assistant\src\main\java\firefly\Service\DepositService.java
+C:\Users\fomin\Desktop\Projects\Personal_finance_assistant\src\main\java\firefly\Controller\DepositController.java
 C:\Users\fomin\Desktop\Projects\Personal_finance_assistant\src\main\java\firefly\Repository\CreditRepository.java
 C:\Users\fomin\Desktop\Projects\Personal_finance_assistant\src\main\java\firefly\Repository\DepositRepository.java
 C:\Users\fomin\Desktop\Projects\Personal_finance_assistant\src\main\java\firefly\Exceptions\ErrorDetails.java
@@ -19,7 +20,6 @@ C:\Users\fomin\Desktop\Projects\Personal_finance_assistant\src\main\java\firefly
 C:\Users\fomin\Desktop\Projects\Personal_finance_assistant\src\main\java\firefly\Model\Roles.java
 C:\Users\fomin\Desktop\Projects\Personal_finance_assistant\src\main\java\firefly\View\ClientAccountView.java
 C:\Users\fomin\Desktop\Projects\Personal_finance_assistant\src\main\java\firefly\Repository\CategoryRepository.java
-C:\Users\fomin\Desktop\Projects\Personal_finance_assistant\src\main\java\firefly\Controller\BasicAuthController.java
 C:\Users\fomin\Desktop\Projects\Personal_finance_assistant\src\main\java\firefly\Model\Deposit.java
 C:\Users\fomin\Desktop\Projects\Personal_finance_assistant\src\main\java\firefly\Service\ClientService.java
 C:\Users\fomin\Desktop\Projects\Personal_finance_assistant\src\main\java\firefly\Repository\RolesRepository.java

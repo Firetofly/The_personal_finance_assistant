@@ -16,6 +16,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 
 
@@ -41,8 +42,10 @@ public class Client {
     @Column(name = "last_name")
     private String lastName;
 
+    @Size(min = 8, max = 20)
     private String login;
 
+    @Size(min = 8, max = 20)
     private String password;
 
     private LocalDateTime lastLoginDate;

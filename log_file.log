@@ -443,3 +443,35 @@ id= 0
 2021-12-17 00:03 INFO  UserController:42 - User as login: Test has been successfully registered
 2021-12-17 00:04 INFO  UserController:54 - Client(id=0, firstName=null, middleName=null, lastName=null, login=fomin-sa, password=test123, lastLoginDate=null) has been authorized successfully.
 2021-12-17 00:04 INFO  UserController:54 - Client(id=0, firstName=null, middleName=null, lastName=null, login=fomia-av, password=123test1, lastLoginDate=null) has been authorized successfully.
+2021-12-19 22:56 INFO  Application:25 - Application has been started
+2021-12-19 23:32 INFO  Application:25 - Application has been started
+2021-12-19 23:32 INFO  UserController:53 - Client(id=0, firstName=null, middleName=null, lastName=null, login=fomia-av, password=123test1, lastLoginDate=null) has been authorized successfully.
+2021-12-19 23:34 ERROR UserController:49 - Client with such login is not exist!
+2021-12-19 23:34 INFO  UserController:53 - Client(id=0, firstName=null, middleName=null, lastName=null, login=fomia-av, password=123test1, lastLoginDate=null) has been authorized successfully.
+2021-12-19 23:41 INFO  UserController:53 - Client(id=0, firstName=null, middleName=null, lastName=null, login=fomia-av, password=123test1, lastLoginDate=null) has been authorized successfully.
+2021-12-19 23:44 INFO  Application:25 - Application has been started
+2021-12-19 23:44 INFO  UserController:53 - Client(id=0, firstName=null, middleName=null, lastName=null, login=fomia-av, password=123test1, lastLoginDate=null) has been authorized successfully.
+2021-12-19 23:47 INFO  UserController:53 - Client(id=0, firstName=null, middleName=null, lastName=null, login=fomia-av, password=123test1, lastLoginDate=null) has been authorized successfully.
+2021-12-19 23:48 INFO  UserController:53 - Client(id=0, firstName=null, middleName=null, lastName=null, login=fomia-av, password=123test1, lastLoginDate=null) has been authorized successfully.
+2021-12-19 23:51 INFO  Application:25 - Application has been started
+2021-12-20 00:00 INFO  Application:25 - Application has been started
+2021-12-20 00:01 INFO  UserController:60 - fomia-av has been authorized successfully.
+2021-12-20 00:30 INFO  Application:25 - Application has been started
+2021-12-20 00:36 INFO  Application:25 - Application has been started
+2021-12-20 00:36 INFO  UserController:60 - Client fomia-av has been authorized successfully.
+2021-12-20 00:45 INFO  Application:29 - Application has been started
+2021-12-20 00:45 INFO  Application:29 - Application has been started
+2021-12-20 00:46 INFO  Application:29 - Application has been started
+2021-12-20 00:46 INFO  Application:29 - Application has been started
+2021-12-20 00:48 INFO  UserController:60 - Client fomia-av has been authorized successfully.
+2021-12-20 00:48 INFO  UserController:60 - Client fomia-av has been authorized successfully.
+2021-12-20 00:48 INFO  UserController:60 - Client fomia-av has been authorized successfully.
+2021-12-20 00:48 INFO  UserController:60 - Client fomia-av has been authorized successfully.
+2021-12-20 00:49 INFO  Application:29 - Application has been started
+2021-12-20 00:49 INFO  Application:29 - Application has been started
+2021-12-20 00:52 INFO  Application:29 - Application has been started
+2021-12-20 00:57 INFO  UserController:60 - Client kogut-bv has been authorized successfully.
+2021-12-20 00:58 ERROR UserController:41 - Incorrect login. Login must be not null!
+2021-12-20 00:58 INFO  UserController:60 - Client fomin-sa has been authorized successfully.
+2021-12-20 00:59 INFO  UserController:60 - Client kogut-bv has been authorized successfully.
+2021-12-20 00:59 INFO  UserController:60 - Client fomia-av has been authorized successfully.

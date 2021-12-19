@@ -33,12 +33,23 @@ public class Deposit {
 
     @Column(name = "id_account")
     private long accountId;
+
     private String name;
+
     private double value;
+
     private double percent;
+
     private String currency;
-    private int months;
+
+    //Date of creation deposit
     private LocalDateTime date;
-    private boolean active;
+
+    //Value of monthly income
+    private double income;
+
+
+
+
 
 }

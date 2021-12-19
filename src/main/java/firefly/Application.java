@@ -5,6 +5,7 @@
 package firefly;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
@@ -12,6 +13,9 @@ import org.springframework.context.annotation.ComponentScan;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+
+
+
 
 
 @ComponentScan(basePackages = "firefly")
@@ -23,6 +27,7 @@ public class Application {
     public static void main(String[] args) {
         SpringApplication.run(Application.class,args);
         logger.info("Application has been started");
+        System.out.println();
     }
 
 }

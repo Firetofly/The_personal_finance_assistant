@@ -18,6 +18,7 @@ firefly\Controller\AdminController.class
 firefly\Model\Credit.class
 firefly\Repository\CategoryRepository.class
 firefly\Service\ClientService.class
+firefly\Controller\DepositController.class
 firefly\View\ClientCreditView.class
 firefly\Exceptions\ErrorDetails.class
 firefly\View\TransactionCategoryView.class
@@ -25,7 +26,6 @@ firefly\Controller\CreditController.class
 firefly\Model\Client.class
 firefly\Repository\CreditRepository.class
 firefly\View\ClientDepositView.class
-firefly\Controller\BasicAuthController.class
 firefly\Configs\AuthenticationBean.class
 firefly\Service\TransactionService.class
 firefly\Model\Deposit.class
