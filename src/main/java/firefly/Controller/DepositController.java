@@ -8,8 +8,10 @@ import firefly.Exceptions.ResourceNotFoundException;
 import firefly.Model.Client;
 import firefly.Model.Deposit;
 import firefly.Repository.AccountRepository;
+import firefly.Repository.ClientRepository;
 import firefly.Repository.DepositRepository;
 import firefly.Service.DepositService;
+import firefly.View.ClientDepositDTO;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +19,7 @@ import org.springframework.security.acls.model.AlreadyExistsException;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,6 +27,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
@@ -41,23 +45,37 @@ public class DepositController {
     @Autowired
     AccountRepository accountRepository;
 
+    @Autowired
+    ClientRepository clientRepository;
+
     private static final Logger logger = Logger.getLogger(DepositController.class);
 
     @PostMapping("create-deposit")
-    public Deposit CreateDeposit(@RequestBody Client client,@RequestBody Deposit deposit) throws AlreadyExistsException {
-        if(depositRepository.findByNameAndAccountId(deposit.getName(),
-            accountRepository.findByIdClientAndCurrency(client.getId(),deposit.getCurrency()).getId())!=null){
-            logger.error("Client's deposit with this name "+ deposit.getName()+" already exist!");
+    public Deposit CreateDeposit(@RequestBody ClientDepositDTO clientDeposit) throws AlreadyExistsException {
+
+        if(depositRepository.findByNameAndAccountId(clientDeposit.getDepositName(),
+            accountRepository.findByIdClientAndCurrency(clientRepository
+                .findByLogin(clientDeposit.getClientLogin()).getId(),
+                clientDeposit.getDepositCurrency()).getId())!=null){
+            logger.error("Client's deposit with this name "+ clientDeposit.getDepositName()+" already exist!");
             new AlreadyExistsException("Deposit already exist!");
         }
-        return depositRepository.save(deposit);
+        Deposit newDeposit = new Deposit();
+        newDeposit.setDate(LocalDateTime.now());
+        newDeposit.setValue(clientDeposit.getDepositValue());
+        //newDeposit.setAccountId();
+        newDeposit.setCurrency(clientDeposit.getDepositCurrency());
+        newDeposit.setName(clientDeposit.getDepositName());
+        newDeposit.setIncome(clientDeposit.getDepositIncome());
+        newDeposit.setPercent(clientDeposit.getDepositPercent());
+        return depositService.addDeposit(clientDeposit.getClientLogin(), newDeposit);
     }
 
     @PutMapping("add-deposit-income")
     public ResponseEntity<Deposit> AddDepositIncome(@RequestBody Client client,
                                                     @RequestParam String name,
                                                     @RequestParam double value,
-                                                    String currency) throws ResourceNotFoundException {
+                                                    @RequestParam String currency) throws ResourceNotFoundException {
         return depositService.addDepositIncome(client, name, value, currency);
 
     }
@@ -77,5 +95,19 @@ public class DepositController {
         return depositService.DeleteDeposit(depositId);
     }
 
+
+    //DEBUG
+    /*@PostMapping("create-deposit/{login}")
+    public Deposit CreateDeposit(@PathVariable long id, @RequestBody Deposit deposit) throws AlreadyExistsException {
+
+        if(depositRepository.findByNameAndAccountId(deposit.getName(),
+            accountRepository.findByIdClientAndCurrency(id,
+                deposit.getCurrency()).getId())!=null){
+            logger.error("Client's deposit with this name "+ deposit.getName()+" already exist!");
+            new AlreadyExistsException("Deposit already exist!");
+        }
+        deposit.setDate(LocalDateTime.now());
+        return depositService.addDeposit(clientRepository.findById(id).get().getLogin(), deposit);
+    }*/
 
 }

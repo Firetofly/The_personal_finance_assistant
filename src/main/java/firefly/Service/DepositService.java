@@ -100,5 +100,13 @@ public class DepositService {
         return allList;
     }
 
+    public Deposit addDeposit(String login, Deposit deposit){
+        Account tmpAcc = accountRepository
+            .findByIdClientAndCurrency(clientRepository.findByLogin(login).getId(), deposit.getCurrency());
+            deposit.setAccountId(tmpAcc.getId());
+            createDeposit(deposit);
+        return deposit;
+    }
+
 
 }
