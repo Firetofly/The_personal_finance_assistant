@@ -2,7 +2,7 @@
  * Copyright (c)
  */
 
-package firefly.View;
+package firefly.DTO;
 
 import firefly.Model.Client;
 import firefly.Model.Deposit;

@@ -48,8 +48,6 @@ public class UserController {
 
     @PostMapping("/login")
     public Client loginUser(@RequestBody Client client){
-        DateTimeFormatter formatter = DateTimeFormatter
-            .ofPattern("yyyy.MM.dd HH:mm:ss", Locale.ROOT);
 
         clientService.findByLogin(client.getLogin()).setLastLoginDate(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES));
         if (clientService.findByLogin(client.getLogin())==null){

@@ -510,3 +510,27 @@ id= 0
 2021-12-22 21:37 INFO  UserController:60 - Client fomia-av has been authorized successfully.
 2021-12-22 21:41 INFO  Application:29 - Application has been started
 2021-12-22 21:42 INFO  Application:29 - Application has been started
+2021-12-22 21:44 INFO  Application:29 - Application has been started
+2021-12-22 21:45 INFO  Application:29 - Application has been started
+2021-12-22 21:45 INFO  Application:29 - Application has been started
+2021-12-22 21:49 INFO  UserController:60 - Client fomia-av has been authorized successfully.
+2021-12-22 21:53 INFO  UserController:60 - Client fomin-sa has been authorized successfully.
+2021-12-22 21:53 INFO  UserController:60 - Client fomin-sa has been authorized successfully.
+2021-12-22 22:01 INFO  UserController:60 - Client fomia-av has been authorized successfully.
+2021-12-22 22:08 INFO  UserController:45 - User as login: testlogin has been successfully registered
+2021-12-22 22:08 INFO  UserController:45 - User as login: testtest has been successfully registered
+2021-12-22 22:08 INFO  Application:29 - Application has been started
+2021-12-22 22:15 INFO  UserController:60 - Client kogut-bv has been authorized successfully.
+2021-12-22 22:16 INFO  UserController:60 - Client fomia-av has been authorized successfully.
+2021-12-22 22:17 INFO  UserController:60 - Client kogut-bv has been authorized successfully.
+2021-12-22 22:18 INFO  Application:29 - Application has been started
+2021-12-22 22:18 INFO  Application:29 - Application has been started
+2021-12-22 22:24 INFO  Application:29 - Application has been started
+2021-12-22 22:24 INFO  Application:29 - Application has been started
+2021-12-22 22:24 INFO  UserController:60 - Client fomia-av has been authorized successfully.
+2021-12-22 22:25 INFO  Application:29 - Application has been started
+2021-12-22 22:25 ERROR DepositController:60 - Client's deposit with this name test already exist!
+2021-12-22 22:26 INFO  Application:29 - Application has been started
+2021-12-22 22:28 INFO  Application:29 - Application has been started
+2021-12-22 22:29 INFO  Application:29 - Application has been started
+2021-12-22 22:34 INFO  Application:29 - Application has been started

@@ -11,7 +11,7 @@ import firefly.Repository.AccountRepository;
 import firefly.Repository.ClientRepository;
 import firefly.Repository.DepositRepository;
 import firefly.Service.DepositService;
-import firefly.View.ClientDepositDTO;
+import firefly.DTO.ClientDepositDTO;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +19,6 @@ import org.springframework.security.acls.model.AlreadyExistsException;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -28,6 +27,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
+import java.time.temporal.ChronoUnit;
 import java.util.List;
 import java.util.Map;
 
@@ -61,9 +61,11 @@ public class DepositController {
             new AlreadyExistsException("Deposit already exist!");
         }
         Deposit newDeposit = new Deposit();
-        newDeposit.setDate(LocalDateTime.now());
+        newDeposit.setDate(LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES));
         newDeposit.setValue(clientDeposit.getDepositValue());
-        //newDeposit.setAccountId();
+        newDeposit.setAccountId(accountRepository
+            .findByIdClientAndCurrency(clientRepository.findByLogin(clientDeposit
+                .getClientLogin()).getId(), clientDeposit.getDepositCurrency()).getId());
         newDeposit.setCurrency(clientDeposit.getDepositCurrency());
         newDeposit.setName(clientDeposit.getDepositName());
         newDeposit.setIncome(clientDeposit.getDepositIncome());
@@ -80,7 +82,7 @@ public class DepositController {
 
     }
 
-    @CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
+
     @GetMapping("all-client-deposits")
     public List<Deposit> allClientDeposits(@RequestParam String login) throws ResourceNotFoundException{
         if(depositService.getByClientLogin(login).get(0)==null){
